@@ -222,6 +222,8 @@ http://127.0.0.1:5000
 
 **Mohammed Salman**
 
-B.Tech Computer Science Engineering Student
+GitHub: https://github.com/MohammedSalman7
+
+Live Project: https://employee-attrition-prediction.onrender.com
 
 Machine Learning | Python | Full Stack Development | Data Analytics
