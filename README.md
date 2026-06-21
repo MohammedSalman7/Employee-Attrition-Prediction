@@ -224,6 +224,6 @@ http://127.0.0.1:5000
 
 GitHub: https://github.com/MohammedSalman7
 
-Live Project: https://employee-attrition-prediction.onrender.com
+Live Project:https://employee-attrition-prediction-h5tf.onrender.com
 
 Machine Learning | Python | Full Stack Development | Data Analytics
