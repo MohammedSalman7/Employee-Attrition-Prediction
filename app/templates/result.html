@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>
+            <i class="fa-solid fa-chart-pie"></i>
+            Prediction Result
+        </h1>
+
+        <div class="result-box">
+
+            {% if risk == "High Risk" %}
+                <div class="status-icon">⚠️</div>
+            {% elif risk == "Medium Risk" %}
+                <div class="status-icon">🟡</div>
+            {% else %}
+                <div class="status-icon">✅</div>
+            {% endif %}
+
+            <h2>{{ result }}</h2>
+
+            <p class="probability-text">
+                Attrition Probability:
+                <strong>{{ probability }}%</strong>
+            </p>
+
+            <div class="progress-container">
+                <div class="progress-bar"
+                     style="width: {{ probability }}%;">
+                </div>
+            </div>
+
+            <div class="
+                risk-badge
+                {% if risk == 'High Risk' %}
+                    high
+                {% elif risk == 'Medium Risk' %}
+                    medium
+                {% else %}
+                    low
+                {% endif %}
+            ">
+                {{ risk }}
+            </div>
+
+            <br><br>
+
+            <h3>Employee Summary</h3>
+
+            <p>Age: {{ age }}</p>
+            <p>Monthly Income: ₹{{ monthly_income }}</p>
+            <p>Distance From Home: {{ distance }} km</p>
+            <p>Years At Company: {{ years_company }}</p>
+            <p>Overtime: {{ overtime }}</p>
+
+            <br>
+
+            <p class="footer-text">
+                Prediction generated on:
+                {{ prediction_time }}
+            </p>
+
+        </div>
+
+        <a href="/" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i>
+            Predict Again
+        </a>
+
+        <p class="footer-text">
+            Built with ❤️ using Flask & Machine Learning
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attrition Prediction System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>
+            <i class="fa-solid fa-users"></i>
+            Employee Attrition Prediction
+        </h1>
+
+        <p class="subtitle">
+            Predict the likelihood of an employee leaving the company using
+            Machine Learning and data-driven insights.
+        </p>
+
+        <form action="/predict" method="POST">
+
+            <!-- Age -->
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input
+                    type="number"
+                    name="age"
+                    placeholder="Age (18 - 60)"
+                    min="18"
+                    max="60"
+                    required
+                >
+            </div>
+
+            <!-- Monthly Income -->
+            <div class="input-group">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <input
+                    type="number"
+                    name="monthly_income"
+                    placeholder="Monthly Income"
+                    min="0"
+                    required
+                >
+            </div>
+
+            <!-- Distance -->
+            <div class="input-group">
+                <i class="fa-solid fa-location-dot"></i>
+                <input
+                    type="number"
+                    name="distance"
+                    placeholder="Distance From Home (km)"
+                    min="0"
+                    required
+                >
+            </div>
+
+            <!-- Years At Company -->
+            <div class="input-group">
+                <i class="fa-solid fa-building"></i>
+                <input
+                    type="number"
+                    name="years_company"
+                    placeholder="Years At Company"
+                    min="0"
+                    required
+                >
+            </div>
+
+            <!-- Job Satisfaction -->
+            <div class="input-group">
+                <i class="fa-solid fa-face-smile"></i>
+                <input
+                    type="number"
+                    name="job_satisfaction"
+                    placeholder="Job Satisfaction (1 = Low, 4 = High)"
+                    min="1"
+                    max="4"
+                    required
+                >
+            </div>
+
+            <!-- Work Life Balance -->
+            <div class="input-group">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <input
+                    type="number"
+                    name="work_life"
+                    placeholder="Work-Life Balance (1 = Low, 4 = High)"
+                    min="1"
+                    max="4"
+                    required
+                >
+            </div>
+
+            <!-- Overtime -->
+            <div class="input-group">
+                <i class="fa-solid fa-clock"></i>
+
+                <select name="overtime" required>
+                    <option value="" disabled selected>
+                        Select Overtime Status
+                    </option>
+
+                    <option value="No">
+                        No Overtime
+                    </option>
+
+                    <option value="Yes">
+                        Works Overtime
+                    </option>
+                </select>
+            </div>
+
+            <small class="helper-text">
+                💡 Employees who work overtime may have a higher attrition risk.
+            </small>
+
+            <button type="submit">
+                <i class="fa-solid fa-chart-line"></i>
+                Predict Attrition
+            </button>
+
+        </form>
+
+        <p class="footer-text">
+            Built with ❤️ using Flask & Machine Learning
+        </p>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
